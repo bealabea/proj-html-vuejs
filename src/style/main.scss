@@ -1,0 +1,98 @@
+@import "@/style/variables.scss";
+
+// utility
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// container
+.big-container {
+    width: 100%;
+}
+
+.small-container {
+    margin: 0 auto;
+    width: 70%;
+    max-width: 1200px;
+    padding: 80px 0;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mgt-40 {
+    margin-top: 40px;
+}
+
+// testi
+p {
+    font-family: $text-font;
+    line-height: 28px;
+}
+
+h1 {
+    font-family: $title-font;
+}
+
+h2 {
+    font-family: $title-font;
+    margin: 40px 0;
+}
+
+h3 {
+    font-family: $title-font;
+}
+
+.spacing-line {
+    display: inline-block;
+    width: 50px;
+    border-top: $border-white-button;
+  }
+
+// button
+button {
+    margin: 10px 0;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.8s, border 0.8s;
+}
+
+.black-button {
+    border: 1px solid $second-color;
+    background-color: $first-color;
+    color: $second-color;
+}
+
+.white-button {
+    border: $border-white-button;
+    background-color: $second-color;
+    color: $first-color;
+}
+
+.transp-button {
+    border: $border-white-button;
+    background-color: transparent;
+    color: $second-color;
+}
+
+.black-button:hover {
+    background-color: $second-color;
+    color: $first-color;
+    transition: background-color 0.8s, border 0.8s;
+}
+
+.white-button:hover {
+    border: $white-button-hover;
+    transition: background-color 0.8s, border 0.8s;
+}
+
+.transp-button:hover {
+    background-color: $first-color;
+    color: $second-color;
+    transition: background-color 0.8s, border 0.8s;
+}

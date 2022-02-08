@@ -1,0 +1,99 @@
+@import "@/style/variables.scss";
+
+// jumbotron
+.jumbotron {
+  display: flex;
+  position: relative;
+  max-height: 950px;
+  min-height: 950px;
+  margin-bottom: 80px;
+  .text-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    min-width: 600px;
+    background-color: $first-color;
+    color: $second-color;
+    .jumbo-text {
+      margin-top: 40px;
+      display: flex;
+      .line {
+        position: relative;
+        top: 10px;
+        width: 40px;
+        margin-right: 40px;
+        border-top: 1px solid $second-color;
+      }
+      .title {
+        width: 360px;
+        h3 {
+          font-family: $subtitle-font;
+          font-weight: 400;
+        }
+        h1 {
+          font-family: $title-font;
+          font-size: 85px;
+          font-weight: 400;
+          margin: 40px 0;
+        }
+        p {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+  
+  .jumbo-img {
+    width: 60%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%,rgba(255, 255, 255, 0) 70%),
+      url(/img/slider52x.jpg) no-repeat 50% 50%;
+    background-size: cover;
+  }
+
+  // header
+  header {
+    position: absolute;
+    width: 100%;
+    padding: 40px 80px;
+    // logo
+    .logo {
+      min-width: 307px;
+      img {
+        width: 100%;
+      }
+    }
+
+    // menu
+    nav ul {
+      font-family: $subtitle-font;
+      display: flex;
+      align-items: center;
+      li {
+        margin: 0 15px;
+        list-style: none;
+        cursor: pointer;
+        a {
+          color: $third-color;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          &:hover {
+            color: $second-color;
+          }
+          // tag NEW a fianco alla voce menu 'Takeout'
+          .new-item {
+            display: inline;
+            font-size: 10px;
+            font-weight: 600;
+            text-align: center;
+            margin-left: 8px;
+            padding: 3px 5px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            color: $second-color;
+          }
+        }
+      }
+    }
+  }
+}

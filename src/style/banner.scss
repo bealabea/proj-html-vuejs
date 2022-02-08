@@ -1,0 +1,50 @@
+@import "@/style/variables.scss";
+
+.banner-container {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 700px;
+
+  // testo banner
+  .text-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    min-width: 600px;
+    background-color: $first-color;
+    color: $second-color;
+    .banner-flex {
+      display: flex;
+      .line {
+        position: relative;
+        top: 10px;
+        width: 40px;
+        margin-right: 40px;
+        border-top: 1px solid $second-color;
+      }
+      .banner-text {
+        width: 360px;
+        h3 {
+          font-family: $subtitle-font;
+          font-weight: 400;
+        }
+        h2 {
+          font-family: $title-font;
+          font-size: 60px;
+          font-weight: 400;
+          margin: 40px 0;
+        }
+        p {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  // immagine banner
+  img {
+    width: 60%;
+    object-fit: cover;
+  }
+}

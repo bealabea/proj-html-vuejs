@@ -1,0 +1,118 @@
+@import "@/style/variables.scss";
+
+// titolo sezione
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+  h2 {
+    font-family: $text-font;
+    font-size: 40px;
+    line-height: 20px;
+    font-weight: 200;
+  }
+}
+
+// banner reviews
+.reviews-banner {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 700px;
+
+  // testo banner reviews
+  .text-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    min-width: 500px;
+    background-color: $first-color;
+    color: $second-color;
+    transform: scale(1);
+    transition: transform 0.5s;
+    &:hover {
+      transform: scale(1.04);
+    }
+    .reviews-text {
+      width: 360px;
+      h3 {
+        font-family: $subtitle-font;
+        font-weight: 400;
+        font-size: 16px;
+      }
+      h2 {
+        font-family: $title-font;
+        font-size: 50px;
+        font-weight: 400;
+        margin: 40px 0;
+        text-align: left;
+      }
+      .line {
+        margin: 40px 0;
+        width: 40px;
+        border-top: 1px solid $second-color;
+      }
+      p {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  // immagine banner reviews
+  img {
+    width: 50%;
+    object-fit: cover;
+  }
+}
+
+// single review
+.single-review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $second-color;
+  width: 48%;
+  height: 650px;
+  padding: 50px;
+  transform: scale(1);
+  transition: transform 0.5s;
+  &:hover {
+    transform: scale(1.04);
+  }
+
+  // testo single review
+  .reviews-text {
+    width: 360px;
+    h3 {
+      font-family: $subtitle-font;
+      font-weight: 400;
+      font-size: 16px;
+    }
+    h2 {
+      font-family: $title-font;
+      font-size: 50px;
+      font-weight: 400;
+      margin: 40px 0;
+      text-align: left;
+    }
+    .line {
+      margin: 40px 0;
+      width: 40px;
+      border-top: 1px solid $second-color;
+    }
+    p {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+// immagini background single review
+.rev-left {
+  background: linear-gradient(180deg, $first-color 17%,rgba(0, 0, 0, 0.315) 90%),
+    url(/img/info52x.jpg) no-repeat;
+  background-size: cover;
+}
+.rev-right {
+  background: linear-gradient(180deg, $first-color 17%,rgba(0, 0, 0, 0.315) 90%),
+    url(/img/info12x.jpg) no-repeat;
+  background-size: cover;
+}
