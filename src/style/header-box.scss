@@ -97,3 +97,74 @@
     }
   }
 }
+
+.demos {
+  cursor:pointer;
+  position: fixed;
+  top: 150px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: $second-color;
+  z-index: 1010;
+  border-radius: 5px;
+  box-shadow: 0 0 25px 5px rgb(0 0 0 / 20%);
+  font-size: 10px;
+  font-family: $subtitle-font;
+  font-weight: 600;
+  .fa-folder-open{
+    font-size: 20px;
+    color: #33475b;
+  }
+}
+
+.on-sale {
+  cursor:pointer;
+  position: fixed;
+  top: 210px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: $second-color;
+  z-index: 1010;
+  border-radius: 5px;
+  box-shadow: 0 0 25px 5px rgb(0 0 0 / 20%);
+  font-size: 10px;
+  font-family: $subtitle-font;
+  font-weight: 600;
+  p{
+    font-family: $subtitle-font;
+    font-size: 20px;
+    color: #52b838;
+    .small-size {
+      font-size: 10px;
+      color: #52b838;
+    }
+  }
+}
+
+.arrow {
+  position: fixed;
+  top: 1100px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(136, 136, 136, 0.7);
+  z-index: 1010;
+  border-radius: 5px;
+  .fa-caret-up {
+    color: $second-color;
+    font-size: 30px;
+  }
+}

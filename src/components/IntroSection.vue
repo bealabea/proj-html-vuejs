@@ -31,40 +31,15 @@
 
     <div class="sushi-container small-container space-between">
       <!-- call to action con disegni sushi x 3 -->
-      <div class="sushi">
-        <img src="/img/sushi-1.png" alt="" />
-        <h3>THE BEST TABLE IN TOWN</h3>
+      <div v-for="(sushi, index) in sushiBox" :key="index" class="sushi">
+        <img :src="`/img/${sushi.img}`" alt="" />
+        <h3>{{sushi.title}}</h3>
         <div class="spacing-line"></div>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nobis
-          natus nostrum quod maxime.
+          {{sushi.text}}
         </p>
-        <button class="white-button">EXPLORE THE MENU</button>
+        <button class="white-button">{{sushi.button}}</button>
       </div>
-
-      <div class="sushi">
-        <img src="/img/sushi-2.png" alt="" />
-        <h3>PERFECT FOR GROUPS</h3>
-        <div class="spacing-line"></div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nobis
-          natus nostrum quod maxime.
-        </p>
-        <button class="white-button">MAKE A RESERVATION</button>
-
-      </div>
-
-      <div class="sushi">
-        <img src="/img/sushi-3.png" alt="" />
-        <h3>FRESH PRODUCE EVERYDAY</h3>
-        <div class="spacing-line"></div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nobis
-          natus nostrum quod maxime.
-        </p>
-        <button class="white-button">LEARN MORE ABOUT US</button>
-      </div>
-
     </div>
 
   </div>
@@ -73,6 +48,9 @@
 <script>
 export default {
   name: "App",
+  props: {
+    sushiBox: Array
+  }
 };
 </script>
 

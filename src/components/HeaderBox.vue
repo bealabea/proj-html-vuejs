@@ -1,4 +1,5 @@
 <template>
+<div>
 <!-- jumbo + header -->
   <div class="jumbotron big-container">
 
@@ -7,7 +8,7 @@
       <div class="logo">
         <img :src="`/img/${logo}`" alt="" />
       </div>
-  <!-- menu -->
+    <!-- menu -->
       <nav>
         <ul>
           <!-- voci menu dinamiche -->
@@ -45,6 +46,21 @@
     <!-- immagine jumbo in background -->
     <div class="jumbo-img"></div>
 
+  </div>
+
+  <div class="demos">
+    <i class="fas fa-folder-open"></i>
+    Demos
+  </div>
+
+  <div class="on-sale">
+    <p><sup class="small-size">$</sup>39</p>
+    OnSale
+  </div>
+
+  <div class="arrow">
+    <a href="#"><i class="fas fa-caret-up"></i></a>
+  </div>
   </div>
 </template>
 

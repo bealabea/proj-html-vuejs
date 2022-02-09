@@ -4,10 +4,10 @@
     <header-box
     :menu="menu"
     logo='logo-restaurant.png'
-    :cart="cart"
+    cart= 'fas fa-shopping-cart'
     />
 
-    <intro-section/>
+    <intro-section :sushiBox="sushiBox"/>
 
     <banner-section :banner="banner[0]"/>
 
@@ -22,7 +22,7 @@
 
     <footer-box
     logo='logo-restaurant.png'
-    :footerText="footerText"
+    footerText= 'Quam eu proin sit massa condimentum. Volutpat non pulvinar aliquet nunc. Quam eu proin sit massa condimentum.'
     :socialIcons="socialIcons"
     />
 
@@ -61,7 +61,26 @@ export default {
         'Bulletin',
         'Reservation'
         ],
-      cart: 'fas fa-shopping-cart',
+      sushiBox: [
+        {
+          img: 'sushi-1.png',
+          title: 'THE BEST TABLE IN TOWN',
+          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nobis natus nostrum quod maxime.',
+          button: 'EXPLORE THE MENU'
+        },
+        {
+          img: 'sushi-2.png',
+          title: 'PERFECT FOR GROUPS',
+          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nobis natus nostrum quod maxime.',
+          button: 'MAKE A RESERVATION'
+        },
+        {
+          img: 'sushi-3.png',
+          title: 'FRESH PRODUCE EVERYDAY',
+          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nobis natus nostrum quod maxime.',
+          button: 'LEARN MORE ABOUT US'
+        }
+      ],
       banner: [
         {
           subtitle: 'FINE DINING EXPERIENCE',
@@ -79,7 +98,6 @@ export default {
           button: 'VIEW TAKEOUT MENU',
         }
       ],
-      footerText: 'Quam eu proin sit massa condimentum. Volutpat non pulvinar aliquet nunc. Quam eu proin sit massa condimentum.', 
       socialIcons: [
         'fab fa-facebook-f',
         'fab fa-twitter',

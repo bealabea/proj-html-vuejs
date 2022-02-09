@@ -104,7 +104,7 @@
               Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus
               scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.
             </p>
-            <button class="black-button">BUY AVADA TODAY</button>
+            <button class="black-button">VIEW IN THE MENU</button>
           </div>
         </div> 
     </div>
