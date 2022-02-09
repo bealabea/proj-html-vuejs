@@ -1,0 +1,70 @@
+@import "@/style/variables.scss";
+
+// titolo sezione
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+  h2 {
+    font-family: $text-font;
+    font-size: 40px;
+    line-height: 20px;
+    font-weight: 200;
+  }
+}
+
+.news-container{
+    display: flex;
+    justify-content: space-between;
+    color: transparent;
+    .news-image {
+        position: relative;
+        text-align: center;
+        width: 32%;
+        height: 650px;
+        background:  linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%,rgba(255, 255, 255, 0) 0%), url(/img/blog92x.jpg) no-repeat 50% 50%;
+        background-size: cover;
+        transition: all 1s;
+        cursor: pointer;
+        .news-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            text-align: center;
+            h2 {
+                margin: 10px 0;
+                font-size: 40px;
+                font-weight: 400;
+            }
+        }
+        .box-hide {
+            color: $first-color;
+            position: absolute;
+            bottom: 0;
+            height: 140px;
+            background-color: $second-color;
+            width: 100%;
+            overflow: hidden;
+            transition: height 0.5s;
+            .text-box {
+                font-size: 35px;
+                font-weight: 500;
+                line-height: 15px;
+                margin: 40px 0 15px 0;
+            }
+            p{
+                font-size: 14px;
+            }
+        }
+        &:hover {
+            color: $second-color;
+            background:  linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%,rgba(255, 255, 255, 0) 80%), url(/img/blog92x.jpg) no-repeat 50% 50%;
+            background-size: cover;
+            transition: all 1s;
+            &:hover .box-hide {
+                height: 0px;
+            }
+        }
+    }
+}

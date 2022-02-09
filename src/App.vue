@@ -9,18 +9,23 @@
 
     <intro-section/>
 
-    <banner-experience/>
+    <banner-section :banner="banner[0]"/>
 
     <reviews-section
     :stars="stars"/>
+
+    <news-promotions/>
+
+    <banner-section :banner="banner[1]"/>
 
   </div>
 </template>
 
 <script>
-import BannerExperience from './components/BannerExperience.vue'
+import BannerSection from './components/BannerSection.vue'
 import HeaderBox from './components/HeaderBox.vue'
 import IntroSection from './components/IntroSection.vue'
+import NewsPromotions from './components/NewsPromotions.vue'
 import ReviewsSection from './components/ReviewsSection.vue'
 
 export default {
@@ -28,8 +33,9 @@ export default {
   components: {
     HeaderBox,
     IntroSection,
-    BannerExperience,
+    BannerSection,
     ReviewsSection,
+    NewsPromotions,
   },
   data(){
     return{
@@ -46,6 +52,23 @@ export default {
         ],
       cart: 'fas fa-shopping-cart',
       stars: 5,
+      banner: [
+        {
+          subtitle: 'FINE DINING EXPERIENCE',
+          title: 'THE BEST TABLE IN TOWN',
+          text: 'Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.',
+          image: '/img/slider32x.jpg',
+          button: 'EXPLORE THE MENU',
+        },
+        {
+          subtitle: 'ENJOY YOUR MEAL AT HOME',
+          title: 'TAKEOUT NOW AVAILABLE',
+          text: 'Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.',
+          image: '/img/slider72x-scaled.jpg',
+          icon: 'fas fa-car',
+          button: 'VIEW TAKEOUT MENU',
+        }
+      ]
     }
   }
 }
