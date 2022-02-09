@@ -16,7 +16,7 @@
 .reviews-banner {
   display: flex;
   flex-direction: row-reverse;
-  height: 700px;
+  height: 800px;
 
   // testo banner reviews
   .text-box {
@@ -71,7 +71,7 @@
   align-items: center;
   color: $second-color;
   width: 48%;
-  height: 650px;
+  height: 700px;
   padding: 50px;
   transform: scale(1);
   transition: transform 0.5s;

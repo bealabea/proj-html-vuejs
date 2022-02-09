@@ -3,7 +3,7 @@
 
     <header-box
     :menu="menu"
-    :logo="logo"
+    logo='logo-restaurant.png'
     :cart="cart"
     />
 
@@ -12,19 +12,29 @@
     <banner-section :banner="banner[0]"/>
 
     <reviews-section
-    :stars="stars"/>
+    :stars="5"/>
 
     <news-promotions/>
 
     <banner-section :banner="banner[1]"/>
+
+    <menu-section/>
+
+    <footer-box
+    logo='logo-restaurant.png'
+    :footerText="footerText"
+    :socialIcons="socialIcons"
+    />
 
   </div>
 </template>
 
 <script>
 import BannerSection from './components/BannerSection.vue'
+import FooterBox from './components/FooterBox.vue'
 import HeaderBox from './components/HeaderBox.vue'
 import IntroSection from './components/IntroSection.vue'
+import MenuSection from './components/MenuSection.vue'
 import NewsPromotions from './components/NewsPromotions.vue'
 import ReviewsSection from './components/ReviewsSection.vue'
 
@@ -36,10 +46,11 @@ export default {
     BannerSection,
     ReviewsSection,
     NewsPromotions,
+    MenuSection,
+    FooterBox
   },
   data(){
     return{
-      logo: 'logo-restaurant.png',
       menu:
       [
         'Home',
@@ -51,7 +62,6 @@ export default {
         'Reservation'
         ],
       cart: 'fas fa-shopping-cart',
-      stars: 5,
       banner: [
         {
           subtitle: 'FINE DINING EXPERIENCE',
@@ -68,7 +78,15 @@ export default {
           icon: 'fas fa-car',
           button: 'VIEW TAKEOUT MENU',
         }
-      ]
+      ],
+      footerText: 'Quam eu proin sit massa condimentum. Volutpat non pulvinar aliquet nunc. Quam eu proin sit massa condimentum.', 
+      socialIcons: [
+        'fab fa-facebook-f',
+        'fab fa-twitter',
+        'fab fa-youtube',
+        'fab fa-instagram',
+        'fab fa-linkedin-in'
+      ],
     }
   }
 }
