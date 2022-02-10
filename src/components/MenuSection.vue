@@ -3,7 +3,7 @@
 
     <div class="big-container menu-container">
       <!-- box menu x3 -->
-      <div class="menu-box">
+      <div class="menu-box horse-doeuvres">
         <div class="text-center">
           <h2>HORSE D'OEUVRES</h2>
             <div class="menu-item">
@@ -61,7 +61,7 @@
         </div>
       </div>
 
-      <div class="menu-box">
+      <div class="menu-box dessert">
         <div class="text-center">
           <h2>DESSERTS</h2>
             <div class="menu-item">

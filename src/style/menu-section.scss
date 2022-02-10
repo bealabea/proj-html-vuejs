@@ -11,6 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     .text-center {
       width: 80%;
       .menu-item {
@@ -33,19 +34,50 @@
         font-family: $subtitle-font;
       }
     }
+    &:hover.main-course {
+      color: $second-color;
+      background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.9) 50%,
+          rgba(255, 255, 255, 0) 100%
+        ),
+        url(/img/misc22x.jpg) no-repeat 50% 50%;
+      background-size: cover;
+      position: relative;
+      top: -40px;
+    }
+    &:hover.horse-doeuvres {
+      color: $second-color;
+      background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.9) 50%,
+          rgba(255, 255, 255, 0) 100%
+        ),
+        url(/img/menu23x.png) no-repeat 50% 50%;
+      background-size: cover;
+      position: relative;
+      top: -40px;
+      box-shadow: none;
+    }
+    &:hover.dessert {
+      color: $second-color;
+      background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.9) 50%,
+          rgba(255, 255, 255, 0) 100%
+        ),
+        url(/img/menu31x.jpg) no-repeat 50% 50%;
+      background-size: cover;
+      position: relative;
+      top: -40px;
+    }
   }
   .main-course {
-    color: $second-color;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.9) 50%,
-        rgba(255, 255, 255, 0) 100%
-      ),
-      url(/img/misc22x.jpg) no-repeat 50% 50%;
-    background-size: cover;
     position: relative;
-    top: -40px;
+    background-color: #d6d6d6;
+    box-shadow: 0 0 25px 5px rgb(0 0 0 / 20%);
   }
+  
 }
 
 .menu-banner {

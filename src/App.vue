@@ -101,6 +101,7 @@ export default {
           button: 'VIEW TAKEOUT MENU',
         }
       ],
+      
       socialIcons: [
         'fab fa-facebook-f',
         'fab fa-twitter',
