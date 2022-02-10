@@ -2,10 +2,10 @@
   <div id="app">
 
     <header-box
-    :menu="menu"
+    :nav="nav"
     logo='logo-restaurant.png'
     cart= 'fas fa-shopping-cart'
-    :menuOpen="menuOpen"
+    :navOpen="navOpen"
     @change="menuBtn"
     />
 
@@ -20,7 +20,11 @@
 
     <banner-section :banner="banner[1]"/>
 
-    <menu-section/>
+    <menu-section
+    :menuOne="menuOne"
+    :menuTwo="menuTwo"
+    :menuThree="menuThree"
+    />
 
     <footer-box
     logo='logo-restaurant.png'
@@ -53,8 +57,8 @@ export default {
   },
   data(){
     return{
-      menuOpen: false,
-      menu:
+      navOpen: false,
+      nav:
       [
         'Home',
         'Culinary History',
@@ -101,7 +105,72 @@ export default {
           button: 'VIEW TAKEOUT MENU',
         }
       ],
-      
+      menuOne: [
+        {
+          plateName: 'AHI SALMON NIGIRI',
+          price: '$48',
+          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
+        },
+        {
+          plateName: 'UMI MASU SALAD',
+          price: '$21',
+          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
+        },
+        {
+          plateName: 'TEMAKI WITH CRAB',
+          price: '$32',
+          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
+        },
+        {
+          plateName: 'CALIFORNIA ROLLS',
+          price: '$22',
+          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
+        },
+      ],
+      menuTwo: [
+        {
+          plateName: 'BRAISED ABALONE',
+          price: '$52',
+          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
+        },
+        {
+          plateName: 'TWICE COOKED PORK',
+          price: '$21',
+          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
+        },
+        {
+          plateName: 'KUNG PAO CHICKEN',
+          price: '$32',
+          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
+        },
+        {
+          plateName: 'CHAR SIU & SUSHI',
+          price: '$48',
+          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
+        },
+      ],
+      menuThree: [
+        {
+          plateName: 'CHOCOLATE BALL CAKE',
+          price: '$13',
+          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
+        },
+        {
+          plateName: 'LIME PIE WITH CRUST',
+          price: '$14',
+          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
+        },
+        {
+          plateName: 'RASPBERRY PEAR CAKE',
+          price: '$18',
+          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
+        },
+        {
+          plateName: 'CAFÉ AU LAIT',
+          price: '$6',
+          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
+        },
+      ],
       socialIcons: [
         'fab fa-facebook-f',
         'fab fa-twitter',
@@ -113,7 +182,7 @@ export default {
   },
   methods: {
     menuBtn(){
-      return this.menuOpen= !this.menuOpen;
+      return this.navOpen= !this.navOpen;
       }
     }
   }

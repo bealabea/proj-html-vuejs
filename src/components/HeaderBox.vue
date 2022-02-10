@@ -11,7 +11,7 @@
         <nav>
           <ul class="menu-list">
             <!-- voci menu dinamiche -->
-            <li v-for="(item, i) in menu" :key="i">
+            <li v-for="(item, i) in nav" :key="i">
               <a href="#"
                 >{{ item }}
                 <!-- tag 'New' generato tramite v-if a fianco alla voce menu 'Takeout' -->
@@ -23,12 +23,12 @@
               <a href="#"><i :class="cart"></i></a>
             </li>
           </ul>
-          <div @click="changeButton()" class="menu-btn" :class="menuOpen === true?'open': ''">
+          <div @click="changeButton()" class="menu-btn" :class="navOpen === true?'open': ''">
             <div class="menu-btn-burger"></div>
           </div>
-          <ul v-if="menuOpen === true" class="burger-list" >
+          <ul v-if="navOpen === true" class="burger-list" >
             <!-- voci menu dinamiche -->
-            <li v-for="(item, i) in menu" :key="i">
+            <li v-for="(item, i) in nav" :key="i">
               <a href="#"
                 >{{ item }}
                 <!-- tag 'New' generato tramite v-if a fianco alla voce menu 'Takeout' -->
@@ -85,9 +85,9 @@ export default {
   // props di logo menu e carrello passati da App.vue
   props: {
     logo: String,
-    menu: Array,
+    nav: Array,
     cart: String,
-    menuOpen: Boolean,
+    navOpen: Boolean,
   },
   methods: {
     changeButton(){
