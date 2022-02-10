@@ -5,6 +5,8 @@
     :menu="menu"
     logo='logo-restaurant.png'
     cart= 'fas fa-shopping-cart'
+    :menuOpen="menuOpen"
+    @change="menuBtn"
     />
 
     <intro-section :sushiBox="sushiBox"/>
@@ -51,6 +53,7 @@ export default {
   },
   data(){
     return{
+      menuOpen: false,
       menu:
       [
         'Home',
@@ -106,8 +109,13 @@ export default {
         'fab fa-linkedin-in'
       ],
     }
+  },
+  methods: {
+    menuBtn(){
+      return this.menuOpen= !this.menuOpen;
+      }
+    }
   }
-}
 </script>
 
 <style lang="scss">

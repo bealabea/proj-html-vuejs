@@ -43,10 +43,14 @@
       }
     }
   }
-  
+
   .jumbo-img {
     width: 60%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%,rgba(255, 255, 255, 0) 70%),
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(255, 255, 255, 0) 70%
+      ),
       url(/img/slider52x.jpg) no-repeat 50% 50%;
     background-size: cover;
   }
@@ -65,7 +69,7 @@
     }
 
     // menu
-    nav ul {
+    .menu-list {
       font-family: $subtitle-font;
       display: flex;
       align-items: center;
@@ -99,7 +103,7 @@
 }
 
 .demos {
-  cursor:pointer;
+  cursor: pointer;
   position: fixed;
   top: 150px;
   right: 10px;
@@ -116,14 +120,14 @@
   font-size: 10px;
   font-family: $subtitle-font;
   font-weight: 600;
-  .fa-folder-open{
+  .fa-folder-open {
     font-size: 20px;
     color: #33475b;
   }
 }
 
 .on-sale {
-  cursor:pointer;
+  cursor: pointer;
   position: fixed;
   top: 210px;
   right: 10px;
@@ -140,7 +144,7 @@
   font-size: 10px;
   font-family: $subtitle-font;
   font-weight: 600;
-  p{
+  p {
     font-family: $subtitle-font;
     font-size: 20px;
     color: #52b838;
@@ -166,5 +170,97 @@
   .fa-caret-up {
     color: $second-color;
     font-size: 30px;
+  }
+}
+
+// burger menu
+
+@media screen and (max-width: 1320px) {
+  .menu-list li {
+    display: none;
+  }
+
+  .menu-btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    .menu-btn-burger {
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px #000;
+      transition: all 0.5s ease-in-out;
+    }
+    .menu-btn-burger::before,
+    .menu-btn-burger::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px #000;
+      transition: all 0.5s ease-in-out;
+    }
+    .menu-btn-burger::before {
+      transform: translateY(-10px);
+    }
+    .menu-btn-burger::after {
+      transform: translateY(10px);
+    }
+  }
+  .menu-btn.open .menu-btn-burger {
+    width: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .menu-btn.open .menu-btn-burger::before {
+    transform: rotate(45deg);
+  }
+  .menu-btn.open .menu-btn-burger::after {
+    transform: rotate(-45deg);
+  }
+
+  .burger-list {
+    font-family: $subtitle-font;
+    z-index: 1100;
+    width: 100%;
+    background: #1f262e;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    li {
+      list-style: none;
+      cursor: pointer;
+      a {
+        padding: 20px 40px;
+        color: $third-color;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $second-color;
+        &:hover {
+          color: $second-color;
+          background-color: #bda16b;
+        }
+        // tag NEW a fianco alla voce menu 'Takeout'
+        .new-item {
+          display: inline;
+          font-size: 10px;
+          font-weight: 600;
+          text-align: center;
+          margin-left: 8px;
+          padding: 3px 5px;
+          border: 1px solid rgba(255, 255, 255, 0.6);
+          color: $second-color;
+        }
+      }
+    }
   }
 }
