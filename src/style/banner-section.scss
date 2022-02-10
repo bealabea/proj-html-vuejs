@@ -9,10 +9,7 @@
   .fa-car {
     margin-right: 10px
   }
-  .text-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .banner-bg-right-box {
     width: 40%;
     min-width: 600px;
     background-color: $first-color;
@@ -30,12 +27,9 @@
         width: 360px;
         h3 {
           font-family: $subtitle-font;
-          font-weight: 400;
         }
         h2 {
-          font-family: $title-font;
           font-size: 60px;
-          font-weight: 400;
           margin: 40px 0;
         }
         p {

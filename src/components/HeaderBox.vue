@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- jumbo + header -->
-    <div class="jumbotron big-container">
+    <div class="jumbotron">
       <header class="space-between">
         <!-- logo dinamico -->
         <div class="logo">
@@ -9,7 +9,7 @@
         </div>
         <!-- menu -->
         <nav>
-          <ul class="menu-list">
+          <ul class="nav-list">
             <!-- voci menu dinamiche -->
             <li v-for="(item, i) in nav" :key="i">
               <a href="#"
@@ -23,10 +23,12 @@
               <a href="#"><i :class="cart"></i></a>
             </li>
           </ul>
-          <div @click="changeButton()" class="menu-btn" :class="navOpen === true?'open': ''">
+          <!-- icona burger menu, aggiunge una classe se il booleano è true -->
+          <div @click="changeButton()" class="menu-btn" :class="{ 'open': navOpen }">
             <div class="menu-btn-burger"></div>
           </div>
-          <ul v-if="navOpen === true" class="burger-list" >
+          <!-- se il booleano è true mostra il burger menu -->
+          <ul v-if="navOpen" class="burger-list">
             <!-- voci menu dinamiche -->
             <li v-for="(item, i) in nav" :key="i">
               <a href="#"
@@ -44,11 +46,11 @@
       </header>
 
       <!-- jumbo box -->
-      <div class="text-box">
+      <div class="bg-left-box justify-center">
         <!-- testo del jumbo -->
-        <div class="jumbo-text">
+        <div class="jumbo-left-box">
           <div class="line"></div>
-          <div class="title">
+          <div class="jumbo-text">
             <h3>THE BEST TABLE IN TOWN</h3>
             <h1>FINE DINING EXPERIENCE</h1>
             <p>
@@ -63,17 +65,17 @@
       <div class="jumbo-img"></div>
     </div>
 
-    <div class="demos">
+    <div class="right-box demos">
       <i class="fas fa-folder-open"></i>
       Demos
     </div>
 
-    <div class="on-sale">
+    <div class="right-box on-sale">
       <p><sup class="small-size">$</sup>39</p>
       OnSale
     </div>
 
-    <div class="arrow">
+    <div class="arrow-to-top">
       <a href="#"><i class="fas fa-caret-up"></i></a>
     </div>
   </div>
@@ -90,10 +92,11 @@ export default {
     navOpen: Boolean,
   },
   methods: {
-    changeButton(){
-      this.$emit('change');
+    // methods che cambia l'icona del burger menu
+    changeButton() {
+      this.$emit("change");
     },
-  }
+  },
 };
 </script>
 

@@ -2,16 +2,13 @@
 
 .footer-bg {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 600px;
   background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 1) 10%,
       rgba(0, 0, 0, 1) 20%,
-      rgba(0, 0, 0, 0.5) 80%,
+      rgba(0, 0, 0, 0.5) 80%
     ),
     url(/img/footer2x.jpg) no-repeat 50% 65%;
   background-size: cover;
@@ -21,45 +18,38 @@
     width: 600px;
     p {
       margin: 40px 0;
-      font-size: 20px
+      font-size: 20px;
     }
-    .social-container {
-      display: flex;
-      justify-content: center;
-      .social-icon {
-        cursor: pointer;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        background-color: $second-color;
-        color: $first-color;
-        transition: all 1s;
-        margin: 0 5px;
-        &:hover {
-          background-color: rgba(0, 0, 0, 0.8);
-          color: $second-color;
-          transition: all .3s;
-        }
+    .social-icon {
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: $second-color;
+      color: $first-color;
+      transition: all 1s;
+      margin: 0 5px;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: $second-color;
+        transition: all 0.3s;
       }
     }
   }
 }
 
 .end-footer {
-    height: 80px;
-    width: 100%;
-    background-color: $first-color;
-    color: $third-color;
-    p {
-        font-size: 12px;
-        text-align: center;
-        line-height: 80px;
-        a{
-            text-decoration: none;
-            color: $second-color;
-        }
+  height: 80px;
+  width: 100%;
+  background-color: $first-color;
+  color: $third-color;
+  p {
+    font-size: 12px;
+    text-align: center;
+    line-height: 80px;
+    a {
+      text-decoration: none;
+      color: $second-color;
     }
+  }
 }

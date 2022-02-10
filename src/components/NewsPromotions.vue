@@ -9,10 +9,10 @@
 
     <!-- box news x3 -->
     <div class="news-container space-between">
-      <div class="cont">
+      <div class="news-card">
         <img src="/img/blog92x.jpg" alt="" />
         <div class="overlay"></div>
-        <div class="news-text">
+        <div class="news-card-text">
           <i class="fas fa-link"></i>
           <h2>THE BEST COFFEE IN TOWN</h2>
           <p>News</p>
@@ -23,10 +23,10 @@
         </div>
       </div>
 
-      <div class="cont">
+      <div class="news-card">
         <img src="/img/blog72x.jpg" alt="" />
         <div class="overlay"></div>
-        <div class="news-text">
+        <div class="news-card-text">
           <i class="fas fa-link"></i>
           <h2>DISCOVER OUR NEW MENU</h2>
           <p>News</p>
@@ -37,10 +37,10 @@
         </div>
       </div>
 
-      <div class="cont">
+      <div class="news-card">
         <img src="/img/blog82x.jpg" alt="" />
         <div class="overlay"></div>
-        <div class="news-text">
+        <div class="news-card-text">
           <i class="fas fa-link"></i>
           <h2>WE NOW ACCEPT SQUARE!</h2>
           <p>News</p>

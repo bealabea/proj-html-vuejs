@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="footer-bg">
+    <div class="footer-bg justify-center">
       <div class="footer-text">
         <img :src="`/img/${logo}`" alt="" />
         <p>{{ footerText }}</p>
-        <div class="social-container">
-          <div class="social-icon" v-for="(icon, i) in socialIcons" :key="i">
+        <div class="justify-center">
+          <div class="social-icon justify-center" v-for="(icon, i) in socialIcons" :key="i">
             <i :class="icon"></i>
           </div>
         </div>

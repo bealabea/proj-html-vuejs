@@ -10,7 +10,7 @@
       <!-- banner reviews -->
       <div class="reviews-banner">
 
-        <div class="text-box">
+        <div class="reviews-bg-right-box justify-center">
           <!-- testo banner reviews -->
           <div class="reviews-text">
             <h3>MEGGY STEWART</h3>
@@ -35,7 +35,7 @@
       <!-- container x single review -->
       <div class="space-between mgt-40">
         <!-- review THE GUARDIAN -->
-        <div class="single-review rev-left">
+        <div class="single-review justify-center rev-left">
         
           <!-- testo single review -->
           <div class="reviews-text">
@@ -53,7 +53,7 @@
         </div>
 
         <!-- review GLOBE AND MAIL -->
-        <div class="single-review rev-right">
+        <div class="single-review justify-center rev-right">
         
           <!-- testo single review -->
           <div class="reviews-text">

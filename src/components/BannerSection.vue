@@ -2,7 +2,7 @@
   
   <div class="banner-container">
 
-    <div class="text-box">
+    <div class="banner-bg-right-box justify-center">
       <!-- testo del banner -->
       <div class="banner-flex">
         <div class="line"></div>

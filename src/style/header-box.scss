@@ -4,18 +4,14 @@
 .jumbotron {
   display: flex;
   position: relative;
-  max-height: 950px;
-  min-height: 950px;
+  height: 950px;
   margin-bottom: 80px;
-  .text-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .bg-left-box {
     width: 40%;
     min-width: 600px;
     background-color: $first-color;
     color: $second-color;
-    .jumbo-text {
+    .jumbo-left-box {
       margin-top: 40px;
       display: flex;
       .line {
@@ -25,17 +21,10 @@
         margin-right: 40px;
         border-top: 1px solid $second-color;
       }
-      .title {
+      .jumbo-text {
         width: 360px;
         h3 {
           font-family: $subtitle-font;
-          font-weight: 400;
-        }
-        h1 {
-          font-family: $title-font;
-          font-size: 85px;
-          font-weight: 400;
-          margin: 40px 0;
         }
         p {
           margin-bottom: 40px;
@@ -46,11 +35,7 @@
 
   .jumbo-img {
     width: 60%;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.7) 0%,
-        rgba(255, 255, 255, 0) 70%
-      ),
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0) 70%),
       url(/img/slider52x.jpg) no-repeat 50% 50%;
     background-size: cover;
   }
@@ -69,7 +54,7 @@
     }
 
     // menu
-    .menu-list {
+    .nav-list {
       font-family: $subtitle-font;
       display: flex;
       align-items: center;
@@ -102,11 +87,9 @@
   }
 }
 
-.demos {
+.right-box {
   cursor: pointer;
   position: fixed;
-  top: 150px;
-  right: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -120,30 +103,20 @@
   font-size: 10px;
   font-family: $subtitle-font;
   font-weight: 600;
+}
+
+.right-box.demos{
+  top: 150px;
+  right: 10px;
   .fa-folder-open {
     font-size: 20px;
     color: #33475b;
   }
 }
 
-.on-sale {
-  cursor: pointer;
-  position: fixed;
+.right-box.on-sale {
   top: 210px;
   right: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  background-color: $second-color;
-  z-index: 1010;
-  border-radius: 5px;
-  box-shadow: 0 0 25px 5px rgb(0 0 0 / 20%);
-  font-size: 10px;
-  font-family: $subtitle-font;
-  font-weight: 600;
   p {
     font-family: $subtitle-font;
     font-size: 20px;
@@ -155,7 +128,7 @@
   }
 }
 
-.arrow {
+.arrow-to-top {
   position: fixed;
   top: 1100px;
   right: 10px;
@@ -176,7 +149,7 @@
 // burger menu
 
 @media screen and (max-width: 1320px) {
-  .menu-list li {
+  .nav-list li {
     display: none;
   }
 
@@ -189,6 +162,7 @@
     cursor: pointer;
     transition: all 0.5s ease-in-out;
     position: relative;
+    // linea centrale
     .menu-btn-burger {
       width: 30px;
       height: 3px;
@@ -197,6 +171,7 @@
       box-shadow: 0 2px 5px #000;
       transition: all 0.5s ease-in-out;
     }
+    // linea sopra e sotto
     .menu-btn-burger::before,
     .menu-btn-burger::after {
       content: "";

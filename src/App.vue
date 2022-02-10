@@ -1,51 +1,63 @@
 <template>
   <div id="app">
-
     <header-box
-    :nav="nav"
-    logo='logo-restaurant.png'
-    cart= 'fas fa-shopping-cart'
-    :navOpen="navOpen"
-    @change="menuBtn"
+      :nav="nav"
+      logo="logo-restaurant.png"
+      cart="fas fa-shopping-cart"
+      :navOpen="navOpen"
+      @change="menuBtn"
     />
 
-    <intro-section :sushiBox="sushiBox"/>
+    <intro-section :sushiBox="sushiBox" />
 
-    <banner-section :banner="banner[0]"/>
+    <banner-section :banner="banner[0]" />
 
-    <reviews-section
-    :stars="5"/>
+    <reviews-section :stars="5" />
 
-    <news-promotions/>
+    <news-promotions />
 
-    <banner-section :banner="banner[1]"/>
+    <banner-section :banner="banner[1]" />
 
+<!-- 3 menu + click per cambiare piatto
++ click per cambiare visualizzazione dello slider dei piatti in base al menu cliccato
+con l'utilizzo di 3 booleani -->
     <menu-section
-    :menuOne="menuOne"
-    :menuTwo="menuTwo"
-    :menuThree="menuThree"
+      :appetizerList="appetizerList"
+      :mainCourseList="mainCourseList"
+      :dessertList="dessertList"
+
+      @prev="prevPlate"
+      @next="nextPlate"
+      :currentIndex="currentIndex"
+
+      @plateListOne="getAppetizerSlider"
+      @plateListTwo="getMainCourseSlider"
+      @plateListThree="getDessertSlider"
+
+      :appetizerSlider="appetizerSlider" 
+      :mainCourseSlider="mainCourseSlider" 
+      :dessertSlider="dessertSlider"
     />
 
     <footer-box
-    logo='logo-restaurant.png'
-    footerText= 'Quam eu proin sit massa condimentum. Volutpat non pulvinar aliquet nunc. Quam eu proin sit massa condimentum.'
-    :socialIcons="socialIcons"
+      logo="logo-restaurant.png"
+      footerText="Quam eu proin sit massa condimentum. Volutpat non pulvinar aliquet nunc. Quam eu proin sit massa condimentum."
+      :socialIcons="socialIcons"
     />
-
   </div>
 </template>
 
 <script>
-import BannerSection from './components/BannerSection.vue'
-import FooterBox from './components/FooterBox.vue'
-import HeaderBox from './components/HeaderBox.vue'
-import IntroSection from './components/IntroSection.vue'
-import MenuSection from './components/MenuSection.vue'
-import NewsPromotions from './components/NewsPromotions.vue'
-import ReviewsSection from './components/ReviewsSection.vue'
+import BannerSection from "./components/BannerSection.vue";
+import FooterBox from "./components/FooterBox.vue";
+import HeaderBox from "./components/HeaderBox.vue";
+import IntroSection from "./components/IntroSection.vue";
+import MenuSection from "./components/MenuSection.vue";
+import NewsPromotions from "./components/NewsPromotions.vue";
+import ReviewsSection from "./components/ReviewsSection.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     HeaderBox,
     IntroSection,
@@ -53,143 +65,214 @@ export default {
     ReviewsSection,
     NewsPromotions,
     MenuSection,
-    FooterBox
+    FooterBox,
   },
-  data(){
-    return{
+  data() {
+    return {
+      // booleano per burger menu
       navOpen: false,
-      nav:
-      [
-        'Home',
-        'Culinary History',
-        'Our Team',
-        'Our Menu',
-        'Takeout',
-        'Bulletin',
-        'Reservation'
-        ],
+      // booleani per slider dei piatti da visualizzare in base agli eventi click
+      appetizerSlider: true,
+      mainCourseSlider: false,
+      dessertSlider: false,
+      // + contatore per slider dei piatti
+      currentIndex: 0,
+      // dati HeaderBox
+      nav: [
+        "Home",
+        "Culinary History",
+        "Our Team",
+        "Our Menu",
+        "Takeout",
+        "Bulletin",
+        "Reservation",
+      ],
+      // dati IntroSection
       sushiBox: [
         {
-          img: 'sushi-1.png',
-          title: 'THE BEST TABLE IN TOWN',
-          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nobis natus nostrum quod maxime.',
-          button: 'EXPLORE THE MENU'
+          img: "sushi-1.png",
+          title: "THE BEST TABLE IN TOWN",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nobis natus nostrum quod maxime.",
+          button: "EXPLORE THE MENU",
         },
         {
-          img: 'sushi-2.png',
-          title: 'PERFECT FOR GROUPS',
-          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nobis natus nostrum quod maxime.',
-          button: 'MAKE A RESERVATION'
+          img: "sushi-2.png",
+          title: "PERFECT FOR GROUPS",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nobis natus nostrum quod maxime.",
+          button: "MAKE A RESERVATION",
         },
         {
-          img: 'sushi-3.png',
-          title: 'FRESH PRODUCE EVERYDAY',
-          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nobis natus nostrum quod maxime.',
-          button: 'LEARN MORE ABOUT US'
-        }
+          img: "sushi-3.png",
+          title: "FRESH PRODUCE EVERYDAY",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nobis natus nostrum quod maxime.",
+          button: "LEARN MORE ABOUT US",
+        },
       ],
+      // dati BannerSection
       banner: [
         {
-          subtitle: 'FINE DINING EXPERIENCE',
-          title: 'THE BEST TABLE IN TOWN',
-          text: 'Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.',
-          image: '/img/slider32x.jpg',
-          button: 'EXPLORE THE MENU',
+          subtitle: "FINE DINING EXPERIENCE",
+          title: "THE BEST TABLE IN TOWN",
+          text: "Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.",
+          image: "/img/slider32x.jpg",
+          button: "EXPLORE THE MENU",
         },
         {
-          subtitle: 'ENJOY YOUR MEAL AT HOME',
-          title: 'TAKEOUT NOW AVAILABLE',
-          text: 'Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.',
-          image: '/img/slider72x-scaled.jpg',
-          icon: 'fas fa-car',
-          button: 'VIEW TAKEOUT MENU',
-        }
-      ],
-      menuOne: [
-        {
-          plateName: 'AHI SALMON NIGIRI',
-          price: '$48',
-          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
-        },
-        {
-          plateName: 'UMI MASU SALAD',
-          price: '$21',
-          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
-        },
-        {
-          plateName: 'TEMAKI WITH CRAB',
-          price: '$32',
-          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
-        },
-        {
-          plateName: 'CALIFORNIA ROLLS',
-          price: '$22',
-          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
+          subtitle: "ENJOY YOUR MEAL AT HOME",
+          title: "TAKEOUT NOW AVAILABLE",
+          text: "Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.",
+          image: "/img/slider72x-scaled.jpg",
+          icon: "fas fa-car",
+          button: "VIEW TAKEOUT MENU",
         },
       ],
-      menuTwo: [
+      // dati MenuSection (3 Menu)
+      appetizerList: [
         {
-          plateName: 'BRAISED ABALONE',
-          price: '$52',
-          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
+          plateName: "AHI SALMON NIGIRI",
+          price: "$48",
+          text: "Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.",
+          description:
+            "Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.",
         },
         {
-          plateName: 'TWICE COOKED PORK',
-          price: '$21',
-          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
+          plateName: "UMI MASU SALAD",
+          price: "$21",
+          text: "Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.",
+          description:
+            "Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.",
         },
         {
-          plateName: 'KUNG PAO CHICKEN',
-          price: '$32',
-          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
+          plateName: "TEMAKI WITH CRAB",
+          price: "$32",
+          text: "Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.",
+          description:
+            "Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.",
         },
         {
-          plateName: 'CHAR SIU & SUSHI',
-          price: '$48',
-          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
-        },
-      ],
-      menuThree: [
-        {
-          plateName: 'CHOCOLATE BALL CAKE',
-          price: '$13',
-          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
-        },
-        {
-          plateName: 'LIME PIE WITH CRUST',
-          price: '$14',
-          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
-        },
-        {
-          plateName: 'RASPBERRY PEAR CAKE',
-          price: '$18',
-          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
-        },
-        {
-          plateName: 'CAFÉ AU LAIT',
-          price: '$6',
-          description: 'Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.',
+          plateName: "CALIFORNIA ROLLS",
+          price: "$22",
+          text: "Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.",
+          description:
+            "Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.",
         },
       ],
+
+      mainCourseList: [
+        {
+          plateName: "BRAISED ABALONE",
+          price: "$52",
+          text: "Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.",
+          description:
+            "Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.",
+        },
+        {
+          plateName: "TWICE COOKED PORK",
+          price: "$21",
+          text: "Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.",
+          description:
+            "Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.",
+        },
+        {
+          plateName: "KUNG PAO CHICKEN",
+          price: "$32",
+          text: "Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.",
+          description:
+            "Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.",
+        },
+        {
+          plateName: "CHAR SIU & SUSHI",
+          price: "$48",
+          text: "Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.",
+          description:
+            "Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.",
+        },
+      ],
+
+      dessertList: [
+        {
+          plateName: "CHOCOLATE BALL CAKE",
+          price: "$13",
+          text: "Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.",
+          description:
+            "Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.",
+        },
+        {
+          plateName: "LIME PIE WITH CRUST",
+          price: "$14",
+          text: "Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.",
+          description:
+            "Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.",
+        },
+        {
+          plateName: "RASPBERRY PEAR CAKE",
+          price: "$18",
+          text: "Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.",
+          description:
+            "Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.",
+        },
+        {
+          plateName: "CAFÉ AU LAIT",
+          price: "$6",
+          text: "Mollis ornare sit sapien, sodales. Cursus duis proin semper quisque.",
+          description:
+            "Pellentesque vitae viverra risus, sagittis. Venenatis ridiculus scelerisque nisi in urna nulla. Sit tempor a et nisl, ac felis.",
+        },
+      ],
+      // dati FooterBox
       socialIcons: [
-        'fab fa-facebook-f',
-        'fab fa-twitter',
-        'fab fa-youtube',
-        'fab fa-instagram',
-        'fab fa-linkedin-in'
+        "fab fa-facebook-f",
+        "fab fa-twitter",
+        "fab fa-youtube",
+        "fab fa-instagram",
+        "fab fa-linkedin-in",
       ],
     }
   },
   methods: {
-    menuBtn(){
-      return this.navOpen= !this.navOpen;
+    // methods che cambia l'icona del burger menu
+    menuBtn() {
+      return (this.navOpen = !this.navOpen);
+    },
+    // methods per navigare in avanti lo slider dei piatti
+    nextPlate(menuArray) {
+      this.currentIndex++;
+      if (this.currentIndex > menuArray.length - 1) {
+        this.currentIndex = 0;
       }
+    },
+    // methods per navigare indietro lo slider dei piatti
+    prevPlate(menuArray) {
+      this.currentIndex--;
+      if (this.currentIndex < 0) {
+        this.currentIndex = menuArray.length - 1;
+      }
+    },
+    // methods per visualizzare lo slider dei piatti in base al click sui menu
+    getAppetizerSlider(){
+      this.appetizerSlider = true;
+      this.mainCourseSlider = false;
+      this.dessertSlider = false;
+      this.currentIndex=0;
+    },
+    getMainCourseSlider(){
+      this.appetizerSlider = false;
+      this.mainCourseSlider = true;
+      this.dessertSlider = false;
+      this.currentIndex=0;
+    },
+    getDessertSlider(){
+      this.appetizerSlider = false;
+      this.mainCourseSlider = false;
+      this.dessertSlider = true;
+      this.currentIndex=0;
     }
-  }
+  },
+};
 </script>
 
 <style lang="scss">
 @import url("https://use.fontawesome.com/releases/v5.7.1/css/all.css");
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:wght@400;600&family=Work+Sans:wght@200;400;500;600&display=swap');
-@import '@/style/main.scss';
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:wght@400;600&family=Work+Sans:wght@200;400;500;600&display=swap");
+@import "@/style/main.scss";
 </style>

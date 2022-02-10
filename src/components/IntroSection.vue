@@ -61,7 +61,6 @@ export default {
   padding-right: 100px;
   h2 {
     font-size: 50px;
-    font-weight: 200;
   }
   img {
     margin-top: 40px;
