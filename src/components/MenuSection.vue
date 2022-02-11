@@ -2,7 +2,7 @@
   <div>
     <div id="menu" class="menu-container justify-center">
       <!-- box menu Appetizer -->
-      <a href="#menuOne-slider" @click="$emit('plateListOne')" class="menu-box justify-center horse-doeuvres">
+      <div v-scroll-to="'#menuOne-slider'" @click="$emit('plateListOne')" class="menu-box justify-center horse-doeuvres">
         <div class="text-center">
             <h2>HORSE D'OEUVRES</h2>
             <div v-for="(plate, i) in appetizerList" :key="i">
@@ -13,10 +13,10 @@
               <p>{{ plate.text }}</p>
             </div>
         </div>
-      </a>
+      </div>
 
       <!-- box menu MainCourse -->
-      <a href="#menuTwo-slider" @click="$emit('plateListTwo')" class="menu-box justify-center main-course">
+      <div v-scroll-to="'#menuTwo-slider'" @click="$emit('plateListTwo')" class="menu-box justify-center main-course">
         <div class="text-center">
             <h2>MAIN COURSE</h2>
             <div v-for="(plate, i) in mainCourseList" :key="i">
@@ -27,10 +27,10 @@
               <p>{{ plate.text }}</p>
             </div>
         </div>
-      </a>
+      </div>
 
     <!-- box menu Dessert -->
-      <a href="#menuThree-slider" @click="$emit('plateListThree')" class="menu-box justify-center dessert">
+      <div v-scroll-to="'#menuThree-slider'" @click="$emit('plateListThree')" class="menu-box justify-center dessert">
         <div class="text-center">
             <h2>DESSERTS</h2>
             <div v-for="(plate, i) in dessertList" :key="i">
@@ -41,7 +41,7 @@
               <p>{{ plate.text }}</p>
             </div>
         </div>
-      </a>
+      </div>
     </div>
 
     <!-- slider con descrizione piatti Apetizer -->

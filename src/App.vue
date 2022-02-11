@@ -56,7 +56,9 @@ import MenuSection from "./components/MenuSection.vue";
 import NewsPromotions from "./components/NewsPromotions.vue";
 import ReviewsSection from "./components/ReviewsSection.vue";
 
+
 export default {
+  
   name: "App",
   components: {
     HeaderBox,
@@ -266,7 +268,7 @@ export default {
       this.mainCourseSlider = false;
       this.dessertSlider = true;
       this.currentIndex=0;
-    }
+    },
   },
 };
 </script>
@@ -275,4 +277,16 @@ export default {
 @import url("https://use.fontawesome.com/releases/v5.7.1/css/all.css");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:wght@400;600&family=Work+Sans:wght@200;400;500;600&display=swap");
 @import "@/style/main.scss";
+
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+  margin-right: 10px;
+}
+::-webkit-scrollbar-thumb {
+  min-height: 0.8em;
+  min-width: 0.8em;
+  background-color: #222;
+  border: none;
+}
 </style>

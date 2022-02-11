@@ -9,7 +9,7 @@
         </div>
         <!-- menu -->
         <nav>
-          <ul class="nav-list">
+          <ul id="header" class="nav-list">
             <!-- voci menu dinamiche -->
             <li v-for="(item, i) in nav" :key="i">
               <a href="#"
@@ -76,7 +76,7 @@
     </div>
 
     <div class="arrow-to-top">
-      <a href="#"><i class="fas fa-caret-up"></i></a>
+      <div v-scroll-to="'#header'"><i class="fas fa-caret-up"></i></div>
     </div>
   </div>
 </template>
